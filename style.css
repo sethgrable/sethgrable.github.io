@@ -1,0 +1,96 @@
+/* ---- Seth Grable - personal site -------------------------------------- */
+:root{
+  --bg:#fdfdfb; --fg:#1b1b1f; --muted:#5e5e6b; --rule:#e2e1dc;
+  --accent:#3a4ea8; --accent-soft:#eef0f9; --card:#ffffff;
+  --measure:47rem;
+  --serif: Charter,"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --mono: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#15161a; --fg:#e8e7e3; --muted:#a0a0ad; --rule:#2c2e35;
+    --accent:#9bb0f0; --accent-soft:#1d2030; --card:#1b1d22;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:var(--serif); font-size:1.0625rem; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--measure); margin:0 auto; padding:0 1.35rem}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+
+/* ---- masthead ---- */
+header.site{border-bottom:1px solid var(--rule); padding:2.1rem 0 0}
+.identity{display:flex; flex-wrap:wrap; align-items:baseline; gap:.3rem 1rem}
+.identity h1{
+  font-size:1.6rem; letter-spacing:-.015em; margin:0; font-weight:600;
+}
+.identity h1 a{color:inherit}
+.identity p{margin:0; color:var(--muted); font-family:var(--sans); font-size:.86rem}
+nav.site{margin-top:1.15rem; font-family:var(--sans); font-size:.9rem}
+nav.site ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:1.4rem}
+nav.site a{display:block; padding-bottom:.65rem; color:var(--muted); border-bottom:2px solid transparent}
+nav.site a:hover{color:var(--fg)}
+nav.site a[aria-current="page"]{color:var(--fg); border-bottom-color:var(--accent)}
+
+/* ---- type ---- */
+main{padding:2.6rem 0 1rem}
+h2{font-size:1.22rem; font-weight:600; letter-spacing:-.01em; margin:2.9rem 0 .9rem}
+h2:first-child{margin-top:0}
+h3{font-size:1.02rem; font-weight:600; margin:1.8rem 0 .35rem}
+p{margin:0 0 1.05rem}
+.lead{font-size:1.16rem; line-height:1.55}
+.kicker{
+  font-family:var(--sans); font-size:.74rem; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 .8rem
+}
+.note{color:var(--muted); font-size:.95rem}
+hr{border:0; border-top:1px solid var(--rule); margin:2.6rem 0}
+
+/* ---- research cards ---- */
+.cards{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); margin:1.2rem 0 0}
+.card{
+  background:var(--card); border:1px solid var(--rule); border-radius:9px;
+  padding:1.05rem 1.15rem;
+}
+.card h3{margin:0 0 .4rem; font-size:.98rem}
+.card p{margin:0; font-size:.95rem; color:var(--muted); line-height:1.5}
+
+/* ---- publication / talk lists ---- */
+.pubs{list-style:none; margin:0; padding:0}
+.pubs > li{padding:.95rem 0; border-top:1px solid var(--rule)}
+.pubs > li:first-child{border-top:0; padding-top:.2rem}
+.pubs .title{display:block}
+.pubs .venue{display:block; font-size:.92rem; color:var(--muted); margin-top:.15rem}
+.tag{
+  display:inline-block; font-family:var(--sans); font-size:.68rem; font-weight:600;
+  letter-spacing:.06em; text-transform:uppercase; color:var(--accent);
+  background:var(--accent-soft); border-radius:3px; padding:.12rem .42rem;
+  vertical-align:.09em; margin-right:.45rem;
+}
+.meta{font-family:var(--sans); font-size:.82rem; color:var(--muted)}
+
+/* ---- timeline (education / appointments) ---- */
+.tl{list-style:none; margin:0; padding:0}
+.tl li{display:grid; grid-template-columns:7.5rem 1fr; gap:0 1.1rem; padding:.6rem 0; border-top:1px solid var(--rule)}
+.tl li:first-child{border-top:0}
+.tl .when{font-family:var(--sans); font-size:.82rem; color:var(--muted); padding-top:.28rem}
+.tl .what strong{font-weight:600}
+.tl .what span{display:block; color:var(--muted); font-size:.94rem}
+@media (max-width:34rem){
+  .tl li{grid-template-columns:1fr; gap:.1rem}
+  .tl .when{padding-top:0}
+}
+
+/* ---- footer ---- */
+footer.site{
+  border-top:1px solid var(--rule); margin-top:3.2rem; padding:1.5rem 0 3rem;
+  font-family:var(--sans); font-size:.85rem; color:var(--muted);
+}
+footer.site a{color:var(--muted)}
+footer.site .row{display:flex; flex-wrap:wrap; gap:.4rem 1.2rem; justify-content:space-between}
