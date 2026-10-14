@@ -23,6 +23,7 @@ Then open <http://localhost:8000>.
 
 ## Publish on GitHub Pages
 
+
 1. Create a public repository named exactly `<your-github-username>.github.io`.
 2. Copy the contents of this folder into it (the files themselves, not the `site/` folder).
 3. Commit and push to the `main` branch.
